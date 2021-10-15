@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BaseGrid } from './Components/Grid/Grid'
+import { Title, FlexContainer } from './Components/StyledComponents/HelperComponents'
 
 function App() {
   return (
     <div className="App">
-      Salut
+      <FlexContainer>
+        <Title>Robot Game</Title>
+        <BaseGrid />
+      </FlexContainer>
     </div>
   );
 }
