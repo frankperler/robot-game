@@ -20,5 +20,3 @@ export const INITIAL_ROTATE_DEG = {
 };
 
 export const FACING_DIRECTIONS = Object.keys(ORIENTATION);
-
-export const COMMANDS = ['PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT'];

@@ -1,6 +1,7 @@
 import { RobotState } from "../types";
 import { RobotActions } from "../actions/RobotActions";
 import { ORIENTATION } from "../utils/constants";
+import { rotate } from "../utils/functions";
 
 export const initialRobotState: RobotState = {
   isPlaced: false,
@@ -13,7 +14,6 @@ export const initialRobotState: RobotState = {
 export const robotReducers = (state = initialRobotState, action: RobotActions) => {
   if (action.type === "COMMAND") {
     const firstCommand = action.payload[0];
-
     if (firstCommand === "PLACE") {
       const x = +action.payload[1];
       const y = +action.payload[2];
@@ -25,7 +25,7 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
         move: ORIENTATION[direction],
         isPlaced: true,
         commands: [...state.commands, `${"PLACE"} ${x},${y},${direction}`]
-      };
+      }
     } else if (firstCommand === "MOVE") {
       return {
         ...state,
@@ -38,7 +38,28 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
           commands: [...state.commands, `${"MOVE"}`]
         })
       };
+    } else if (firstCommand === "LEFT") {
+      const newFacing = rotate(state.facing!, firstCommand)
+      return {
+        ...state,
+        ...(state.isPlaced && {
+          facing: newFacing,
+          move: ORIENTATION[newFacing],
+          commands: [...state.commands, `${"LEFT"}`]
+        })
+      };
+    } else if (firstCommand === "RIGHT") {
+      const newFacing = rotate(state.facing!, firstCommand)
+      return {
+        ...state,
+        ...(state.isPlaced && {
+          facing: newFacing,
+          move: ORIENTATION[newFacing],
+          commands: [...state.commands, `${"RIGHT"}`]
+        })
+      };
     }
+
     return state;
   }
 
