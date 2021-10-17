@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Title, Text } from '../StyledComponents/StyledComponents'
+import { Box, Text } from '../StyledComponents/StyledComponents'
 
 export const Instructions = () => {
 
@@ -11,7 +11,6 @@ export const Instructions = () => {
       <Text>LEFT: turns the robot by 90° on the left</Text><br />
       <Text>RIGHT: turns the robot by 90° on the right</Text><br />
       <Text>REPORT: outputs the position on the board</Text><br />
-      <Title>Have Fun!</Title>
     </Box >
   )
 }

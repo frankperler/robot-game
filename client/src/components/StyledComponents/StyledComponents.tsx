@@ -96,8 +96,8 @@ export const Button = styled.button <{ inputColor?: string }>`
   border-radius: 4px;
   cursor: pointer;
 `
-export const Text = styled.text`
-  margin: 1rem;
+export const Text = styled.div`
+  margin: 0rem;
   font-size: 0.9rem;
   color: #C83E4D;
 `

@@ -34,12 +34,12 @@ export const CommandCenter = () => {
   return (
     <FlexContainer flexDir="column">
       <Form onSubmit={(event) => handleSubmit(event)}>
-        <InputField value={command} onChange={handleChange} type="text" placeholder="Input your command..." />
+        <InputField data-testid="commandInput" name="command" value={command} onChange={handleChange} type="text" placeholder="Input your command" />
         <FlexContainer>
-          <Button>Run Command</Button>
+          <Button type="submit" data-testid="run-cmd-btn">Run Command</Button>
           <Button onClick={handleReset}>Reset</Button>
         </FlexContainer>
-        <HistoryField>
+        <HistoryField data-testid="history-field">
           {stateRobot.commands.map(command => {
             return (<div style={{ marginRight: "0.3rem" }} key={`${count++}+command`}>{count + ". " + command + " "}</div>)
           })}
