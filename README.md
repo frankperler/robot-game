@@ -1,5 +1,5 @@
 
--game
+robot-game
 ===============
 
 > A robot simulator written with React
