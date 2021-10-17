@@ -1,17 +1,25 @@
-import React from 'react';
-import './App.css';
-import { BaseGrid } from './Components/Grid/Grid'
-import { Title, FlexContainer } from './Components/StyledComponents/HelperComponents'
+import * as React from 'react'
+import './App.css'
+import { Board } from './Components/Grid/Grid'
+import { CommandCenter } from './Components/CommandCenter/CommandCenter'
+import {
+  Title,
+  FlexContainer,
+} from './Components/StyledComponents/HelperComponents'
 
 function App() {
   return (
     <div className="App">
-      <FlexContainer>
+      <FlexContainer flexDir="column">
         <Title>Robot Game</Title>
-        <BaseGrid />
+        <FlexContainer>
+          <CommandCenter />
+          <Board />
+        </FlexContainer>
+
       </FlexContainer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,13 +1,24 @@
-import React from "react";
-import { Box, GameBoard } from "../StyledComponents/HelperComponents";
+import * as React from 'react'
+import { Box, ColumnContainer, GameBoard } from '../StyledComponents/HelperComponents'
 
-export const BaseGrid = () => {
+export const Board = () => {
+  const rows: number[] = [1, 2, 3, 4, 5]
+  const columns: number[] = [1, 2, 3, 4, 5];
 
-  const n = 25;
+  const drawBoard = React.useCallback(
+    (rowIndex: number) => (
+      <ColumnContainer key={`column-${rowIndex}`}>
+        {rows.map((squareIndex: number) => (
+          <Box key={`row-${squareIndex}`} />
+        ))}
+      </ColumnContainer>
+    ),
+    [rows]
+  );
 
   return (
     <GameBoard>
-      {[...Array(n)].map((e, i) => <Box />)}
+      {columns.map(drawBoard)}
     </GameBoard>
-  );
+  )
 }
