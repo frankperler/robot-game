@@ -5,7 +5,7 @@ type CommandAction = {
 
 type PlaceAction = {
   type: 'PLACE'
-  payload: null
+  payload: string[]
 }
 
 type MoveAction = {

@@ -11,16 +11,16 @@ export const Board = () => {
 
   const drawBoard = React.useCallback(
     (colIndex: number) => (
-      <ColumnContainer key={`column-${colIndex}`}>
+      <ColumnContainer key={`y-${colIndex}`}>
         {rows.map((rowIndex: number) => {
-          if (stateRobot.isPlaced === true && stateRobot.coordinate?.x === rowIndex && stateRobot.coordinate?.y === colIndex) {
+          if (stateRobot.isPlaced === true && stateRobot.coordinate?.x === colIndex && stateRobot.coordinate?.y === rowIndex) {
             return (
-              <Box key={`row-${rowIndex}`}>
+              <Box key={`x-${rowIndex}`}>
                 <Robot />
               </Box>
             )
           } else {
-            return <Box key={`row-${rowIndex}`} />
+            return <Box key={`x-${rowIndex}`} />
           }
         })
         }

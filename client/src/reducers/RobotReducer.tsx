@@ -1,42 +1,53 @@
 import { RobotState } from "../types";
 import { RobotActions } from "../actions/RobotActions";
+import { ORIENTATION } from "../utils/constants";
 
 export const initialRobotState: RobotState = {
   isPlaced: false,
   coordinate: { x: 1, y: 0 },
   facing: null,
   move: { x: 0, y: 1 },
-  // rotateDeg: 0,
   commands: [],
 };
 
 export const robotReducers = (state = initialRobotState, action: RobotActions) => {
   if (action.type === "COMMAND") {
-    console.log(action.payload)
-    console.log(state)
     const firstCommand = action.payload[0];
+
     if (firstCommand === "PLACE") {
-      const x = action.payload[1];
-      const y = action.payload[2];
-      const f = action.payload[3];
+      const x = +action.payload[1];
+      const y = +action.payload[2];
+      const direction = action.payload[3];
       return {
         ...state,
-        facing: { f },
-        coordinate: { x, y },
-        // rotateDeg: 0,
+        facing: direction,
+        coordinate: { x: x, y: y },
+        move: ORIENTATION[direction],
         isPlaced: true,
-        commands: [...state.commands, `${"PLACE"} ${x},${y},${f}`]
+        commands: [...state.commands, `${"PLACE"} ${x},${y},${direction}`]
+      };
+    } else if (firstCommand === "MOVE") {
+      return {
+        ...state,
+        ...(state.isPlaced &&
+          state.coordinate !== null && {
+          coordinate: {
+            x: state.coordinate.x + state.move.x,
+            y: state.coordinate.y + state.move.y
+          },
+          commands: [...state.commands, `${"MOVE"}`]
+        })
       };
     }
     return state;
   }
+
   if (action.type === "RESET") {
     return {
       isPlaced: false,
       coordinate: null,
       facing: null,
       move: { x: 0, y: 1 },
-      // rotateDeg: 0,
       commands: [],
     };
   }

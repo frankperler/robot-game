@@ -1,5 +1,5 @@
 import * as React from 'react';
-import img from '../../robot.jpg'
+import img from '../../robot-vector.jpg'
 import { FlexContainer } from '../StyledComponents/StyledComponents';
 import { robotContext } from '../../contexts/RobotContext';
 

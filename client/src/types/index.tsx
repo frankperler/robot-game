@@ -3,16 +3,16 @@ export interface CoordinateObject {
   y: number;
 }
 
-export type Direction = 'NORTH' | 'SOUTH' | 'WEST' | 'EAST';
-
 export interface RobotState {
   isPlaced: boolean;
   coordinate: CoordinateObject | null;
-  facing: Direction | null;
+  facing: string | null;
   move: CoordinateObject;
-  // rotateDeg: number;
   commands: string[];
 }
 export interface ApplicationState {
   robot: RobotState;
 }
+
+export type Orientation = Record<Direction | string, CoordinateObject>;
+export type Direction = 'NORTH' | 'SOUTH' | 'WEST' | 'EAST';

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { initialRobotState } from "../reducers/RobotReducer";
 import { RobotActions } from "../actions/RobotActions";
 import { RobotState } from "../types";

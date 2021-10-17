@@ -1,3 +1,5 @@
-export const helper = () => {
+
+
+export const nextMove = (facingDir: string) => {
   return;
 }
