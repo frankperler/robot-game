@@ -9,7 +9,7 @@ export const Robot = () => {
 
   return (
     <FlexContainer data-testid="robot-container" flexDir="column">
-      <img src={img} alt="Robot" style={{ width: "30%", height: "30%", marginTop: "1.8rem", backgroundRepeat: "no-repeat" }}></img>
+      <img data-testid="robot-image" src={img} alt="Robot" style={{ width: "30%", height: "30%", marginTop: "1.8rem", backgroundRepeat: "no-repeat" }}></img>
       <div style={{ color: "black", fontSize: "0.8rem" }}>{stateRobot.facing}</div>
     </FlexContainer >
   )

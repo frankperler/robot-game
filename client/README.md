@@ -36,7 +36,6 @@ commands.
 
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[React](https://reactjs.org/)**
-- **[Create-react-app](https://github.com/facebook/create-react-app)**
 - **[Styled-components](https://www.styledcomponents.com/)**
 
 ## Get started

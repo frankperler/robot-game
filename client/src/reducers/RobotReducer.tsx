@@ -20,7 +20,7 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
       const x = +action.payload[1];
       const y = +action.payload[2];
       const direction = action.payload[3];
-      if (x > 4 || y > 4) {
+      if (x > 4 || y > 4 || x < 0 || y < 0) {
         alert('You cannot go there you would fall')
         return state;
       } else if (!DirectionTypes.includes(direction)) {
@@ -38,7 +38,7 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
     } else if (firstCommand === "MOVE") {
       const newX = state.coordinate.x + state.move.x
       const newY = state.coordinate.y + state.move.y
-      if (newX > 4 || newY > 4) {
+      if (newX > 4 || newY > 4 || newY < 0 || newX < 0) {
         alert('You cannot go there you would fall')
         return state;
       }
