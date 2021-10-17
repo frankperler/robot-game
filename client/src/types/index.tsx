@@ -12,7 +12,6 @@ export interface RobotState {
   move: CoordinateObject;
   rotateDeg: number;
   commands: string[];
-  errorMessage: string;
 }
 
 export interface ApplicationState {

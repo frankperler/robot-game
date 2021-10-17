@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, ColumnContainer, GameBoard } from '../StyledComponents/HelperComponents'
+import { Box, ColumnContainer, GameBoard } from '../StyledComponents/StyledComponents'
 
 export const Board = () => {
   const rows: number[] = [1, 2, 3, 4, 5]
