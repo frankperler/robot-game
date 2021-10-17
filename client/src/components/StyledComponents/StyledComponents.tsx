@@ -25,13 +25,15 @@ export const GameBoard = styled.div`
     justify-content: center;
 `
 
-export const Box = styled.div <{ width?: string, height?: string, borderRadius?: string, margin?: string }>`
+export const Box = styled.div <{ flexDir?: string, display?: string, width?: string, height?: string, borderRadius?: string, margin?: string }>`
     background-color: #f4b860;
     border: 1px solid black;
     width: ${(props) => props.width || "100%"};
     height: ${(props) => props.height || "100%"};
     border-radius: ${(props) => props.borderRadius || "0px"};
     margin: ${(props) => props.margin || "0rem"};
+    display: ${(props) => props.display || "block"};
+    flex-direction: ${(props) => props.flexDir || "row"};
     color: #F4d6CC;
     font-weight:bold;
     font-size: 1rem;
@@ -96,8 +98,9 @@ export const Button = styled.button <{ inputColor?: string }>`
   border-radius: 4px;
   cursor: pointer;
 `
-export const Text = styled.div`
-  margin: 0rem;
+export const Text = styled.div<{ textAlign?: string }>`
+  margin-left: 1.5rem;
+  text-align: ${props => props.textAlign};
   font-size: 0.9rem;
   color: #C83E4D;
 `
