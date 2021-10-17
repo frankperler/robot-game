@@ -17,11 +17,13 @@ export const CommandCenter = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     dispatchRobot({ type: "COMMAND", payload: command.split(/[\s,]+/) })
+    setCommand('')
   }
 
   const handleReset = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     dispatchRobot({ type: "RESET" })
+    setCommand('')
   }
 
   return (

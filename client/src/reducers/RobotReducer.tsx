@@ -58,6 +58,18 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
           commands: [...state.commands, `${"RIGHT"}`]
         })
       };
+    } else if (firstCommand === "REPORT") {
+
+      return {
+        ...state,
+        ...(state.isPlaced &&
+          state.coordinate !== null && {
+          commands: [
+            ...state.commands,
+            `OUTPUT: ${state.coordinate.x},${state.coordinate.y},${state.facing}`
+          ]
+        })
+      };
     }
 
     return state;
