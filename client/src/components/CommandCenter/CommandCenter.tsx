@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { FlexContainer, InputField, Form, Button } from '../StyledComponents/StyledComponents'
+import { FlexContainer, InputField, Form, Button, HistoryField } from '../StyledComponents/StyledComponents'
 import { robotContext } from '../../contexts/RobotContext'
 import { Instructions } from './Instructions'
 
 export const CommandCenter = () => {
 
   const [command, setCommand] = React.useState<string>('');
-  const { stateRobot, dispatchRobot } = React.useContext(robotContext)
-
+  const { stateRobot, dispatchRobot } = React.useContext(robotContext);
+  let count = 1;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -34,6 +34,11 @@ export const CommandCenter = () => {
           <Button>Run Command</Button>
           <Button onClick={handleReset}>Reset</Button>
         </FlexContainer>
+        <HistoryField>
+          {stateRobot.commands.map(command => {
+            return (<div style={{ marginRight: "0.3rem" }} key={`${count++}+command`}>{count + ". " + command + " "}</div>)
+          })}
+        </HistoryField>
       </Form>
       <Instructions />
     </FlexContainer>

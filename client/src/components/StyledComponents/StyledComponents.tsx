@@ -15,6 +15,7 @@ export const Title = styled.h1`
     text-align: center;
     text-shadow: 1rem;
     color: #C83E4D;
+    padding-bottom: 1rem;
 `
 
 export const GameBoard = styled.div`
@@ -51,7 +52,7 @@ export const Form = styled.form`
   justify-content: flex-start;
   margin: 0.5rem 2rem 1rem 2rem;
   width: 30rem;
-  height: 10rem;
+  height: 18rem;
   background: #f4b860;
   border: none;
   border: 1px solid black;
@@ -59,6 +60,21 @@ export const Form = styled.form`
 `
 
 export const InputField = styled.input`
+  margin: 1rem;
+  width: 80%;
+  height: 20%;
+  text-align: center;
+  color: black;
+  background:#F4d6CC;
+  border: none;
+  border-radius: 4px;
+`
+
+export const HistoryField = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
   margin: 1rem;
   width: 80%;
   height: 20%;
