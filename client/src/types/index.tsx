@@ -10,10 +10,9 @@ export interface RobotState {
   coordinate: CoordinateObject | null;
   facing: Direction | null;
   move: CoordinateObject;
-  rotateDeg: number;
+  // rotateDeg: number;
   commands: string[];
 }
-
 export interface ApplicationState {
   robot: RobotState;
 }

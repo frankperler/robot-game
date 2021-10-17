@@ -86,3 +86,5 @@ export const Text = styled.text`
   color: #C83E4D;
 `
 
+
+

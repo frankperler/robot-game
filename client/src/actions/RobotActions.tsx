@@ -1,3 +1,8 @@
+type CommandAction = {
+  type: 'COMMAND'
+  payload: string[]
+}
+
 type PlaceAction = {
   type: 'PLACE'
   payload: null
@@ -25,7 +30,6 @@ type ReportAction = {
 
 type ResetAction = {
   type: 'RESET'
-  payload: null
 }
 
-export type RobotActions = PlaceAction | MoveAction | LeftAction | RightAction | ReportAction | ResetAction;
+export type RobotActions = PlaceAction | MoveAction | LeftAction | RightAction | ReportAction | ResetAction | CommandAction;

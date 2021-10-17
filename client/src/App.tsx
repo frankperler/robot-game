@@ -6,17 +6,16 @@ import {
   Title,
   FlexContainer,
 } from './components/StyledComponents/StyledComponents'
-import { robotReducers } from './reducers/RobotReducer';
-import { initialRobotState } from './reducers/RobotReducer';
+import { robotReducers, initialRobotState } from './reducers/RobotReducer';
 import { robotContext } from './contexts/RobotContext'
 
 function App() {
 
-  const [robotState, dispatchRobotActions] = React.useReducer(robotReducers, initialRobotState)
+  const [stateRobot, dispatchRobot] = React.useReducer(robotReducers, initialRobotState)
 
   return (
     <div className="App">
-      <robotContext.Provider value={{ robotState, dispatchRobotActions }}>
+      <robotContext.Provider value={{ stateRobot, dispatchRobot }}>
         <FlexContainer flexDir="column">
           <Title>Robot Game</Title>
           <FlexContainer>

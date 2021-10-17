@@ -5,35 +5,32 @@ import { Instructions } from './Instructions'
 
 export const CommandCenter = () => {
 
-  const [command, setCommand] = React.useState<string>('')
-  const { robotState, dispatchRobotActions } = React.useContext(robotContext)
+  const [command, setCommand] = React.useState<string>('');
+  const { stateRobot, dispatchRobot } = React.useContext(robotContext)
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setCommand(e.target.value.toUpperCase())
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    dispatchRobot({ type: "COMMAND", payload: command.split(/[\s,]+/) })
   }
 
-
-  const handleSubmit = () => {
-    console.log(robotState)
-  }
-
-  const handleRun = () => {
-    return;
-  }
-
-  const handleReset = () => {
-    return;
+  const handleReset = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    dispatchRobot({ type: "RESET" })
   }
 
   return (
     <FlexContainer flexDir="column">
-      <Form as="form" onSubmit={handleSubmit}>
+      <Form onSubmit={(event) => handleSubmit(event)}>
         <InputField value={command} onChange={handleChange} type="text" placeholder="Your command..." />
         <FlexContainer>
-          <Button type="submit" onClick={handleRun}>Run Command</Button>
-          <Button type="reset" onClick={handleReset}>Reset</Button>
+          <Button>Run Command</Button>
+          <Button onClick={handleReset}>Reset</Button>
         </FlexContainer>
       </Form>
       <Instructions />
