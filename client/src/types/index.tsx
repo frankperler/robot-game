@@ -5,10 +5,11 @@ export interface CoordinateObject {
 
 export interface RobotState {
   isPlaced: boolean;
-  coordinate: CoordinateObject | null;
+  coordinate: CoordinateObject;
   facing: string | null;
   move: CoordinateObject;
   commands: string[];
+  errorMessage: string;
 }
 export interface ApplicationState {
   robot: RobotState;
@@ -16,3 +17,4 @@ export interface ApplicationState {
 
 export type Orientation = Record<Direction | string, CoordinateObject>;
 export type Direction = 'NORTH' | 'SOUTH' | 'WEST' | 'EAST';
+

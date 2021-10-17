@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FlexContainer, InputField, Form, Button, HistoryField } from '../StyledComponents/StyledComponents'
 import { robotContext } from '../../contexts/RobotContext'
+import { CommandTypes } from '../../utils/constants'
 import { Instructions } from './Instructions'
 
 export const CommandCenter = () => {
@@ -16,7 +17,11 @@ export const CommandCenter = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    dispatchRobot({ type: "COMMAND", payload: command.split(/[\s,]+/) })
+    if (CommandTypes.includes(command.split(/[\s,]+/)[0])) {
+      dispatchRobot({ type: "COMMAND", payload: command.split(/[\s,]+/) })
+    } else {
+      alert("This is not a valid command. Try again")
+    }
     setCommand('')
   }
 
@@ -29,7 +34,7 @@ export const CommandCenter = () => {
   return (
     <FlexContainer flexDir="column">
       <Form onSubmit={(event) => handleSubmit(event)}>
-        <InputField value={command} onChange={handleChange} type="text" placeholder="Your command..." />
+        <InputField value={command} onChange={handleChange} type="text" placeholder="Input your command..." />
         <FlexContainer>
           <Button>Run Command</Button>
           <Button onClick={handleReset}>Reset</Button>

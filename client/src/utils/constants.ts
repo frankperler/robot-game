@@ -12,11 +12,5 @@ export const ORIENTATION: Orientation = {
   WEST: { x: -1, y: 0 }
 };
 
-export const INITIAL_ROTATE_DEG = {
-  NORTH: 0,
-  EAST: 90,
-  SOUTH: 180,
-  WEST: 270
-};
-
-export const FACING_DIRECTIONS = Object.keys(ORIENTATION);
+export const CommandTypes: string[] = ["PLACE", "MOVE", "LEFT", "RIGHT", "REPORT", "RESET"]
+export const DirectionTypes: string[] = ["NORTH", "SOUTH", "WEST", "EAST"]

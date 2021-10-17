@@ -2,6 +2,7 @@ import { RobotState } from "../types";
 import { RobotActions } from "../actions/RobotActions";
 import { ORIENTATION } from "../utils/constants";
 import { rotate } from "../utils/functions";
+import { DirectionTypes } from "../utils/constants";
 
 export const initialRobotState: RobotState = {
   isPlaced: false,
@@ -9,6 +10,7 @@ export const initialRobotState: RobotState = {
   facing: null,
   move: { x: 0, y: 1 },
   commands: [],
+  errorMessage: ""
 };
 
 export const robotReducers = (state = initialRobotState, action: RobotActions) => {
@@ -18,6 +20,13 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
       const x = +action.payload[1];
       const y = +action.payload[2];
       const direction = action.payload[3];
+      if (x > 4 || y > 4) {
+        alert('You cannot go there you would fall')
+        return state;
+      } else if (!DirectionTypes.includes(direction)) {
+        alert('This is not a valid command. Try again')
+        return state;
+      }
       return {
         ...state,
         facing: direction,
@@ -27,6 +36,12 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
         commands: [...state.commands, `${"PLACE"} ${x},${y},${direction}`]
       }
     } else if (firstCommand === "MOVE") {
+      const newX = state.coordinate.x + state.move.x
+      const newY = state.coordinate.y + state.move.y
+      if (newX > 4 || newY > 4) {
+        alert('You cannot go there you would fall')
+        return state;
+      }
       return {
         ...state,
         ...(state.isPlaced &&
@@ -59,7 +74,6 @@ export const robotReducers = (state = initialRobotState, action: RobotActions) =
         })
       };
     } else if (firstCommand === "REPORT") {
-
       return {
         ...state,
         ...(state.isPlaced &&
