@@ -1,10 +1,11 @@
-react-toy-robot
+
+-game
 ===============
 
-> A toy robot simulator written with React
+> A robot simulator written with React
 
 ## Description:
-The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
+The application is a simulation of a robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
 
 ## Create an application that can read in commands of the following form
 
@@ -59,7 +60,7 @@ $ git clone https://github.com/frankperler/robot-game
 #### Install npm package
 
 ```bash
-$ cd react-toy-robot && npm i
+$ cd robot-game && npm install
 ```
 
 #### Start local server
