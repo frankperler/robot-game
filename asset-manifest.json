@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/robot-game/static/css/main.85408e0d.chunk.css",
+    "main.js": "/robot-game/static/js/main.86fd06be.chunk.js",
+    "main.js.map": "/robot-game/static/js/main.86fd06be.chunk.js.map",
+    "runtime-main.js": "/robot-game/static/js/runtime-main.0cf478b1.js",
+    "runtime-main.js.map": "/robot-game/static/js/runtime-main.0cf478b1.js.map",
+    "static/js/2.eeb68c5b.chunk.js": "/robot-game/static/js/2.eeb68c5b.chunk.js",
+    "static/js/2.eeb68c5b.chunk.js.map": "/robot-game/static/js/2.eeb68c5b.chunk.js.map",
+    "static/js/3.4578db19.chunk.js": "/robot-game/static/js/3.4578db19.chunk.js",
+    "static/js/3.4578db19.chunk.js.map": "/robot-game/static/js/3.4578db19.chunk.js.map",
+    "index.html": "/robot-game/index.html",
+    "static/css/main.85408e0d.chunk.css.map": "/robot-game/static/css/main.85408e0d.chunk.css.map",
+    "static/js/2.eeb68c5b.chunk.js.LICENSE.txt": "/robot-game/static/js/2.eeb68c5b.chunk.js.LICENSE.txt",
+    "static/media/robot-vector.ecd8fd95.jpg": "/robot-game/static/media/robot-vector.ecd8fd95.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cf478b1.js",
+    "static/js/2.eeb68c5b.chunk.js",
+    "static/css/main.85408e0d.chunk.css",
+    "static/js/main.86fd06be.chunk.js"
+  ]
+}
