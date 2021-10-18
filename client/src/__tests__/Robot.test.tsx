@@ -3,7 +3,6 @@ import { render, screen, cleanup } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import App from '../App';
-import { mount, toContainReact } from 'enzyme';
 
 describe('robot render test suite', () => {
   afterEach(cleanup)
