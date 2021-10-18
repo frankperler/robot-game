@@ -70,4 +70,38 @@ describe('action test suite', () => {
 
     expect(alertMock).toHaveBeenCalledTimes(1)
   })
+
+  it('displays WEST on the page after PLACE 1 1 NORTH LEFT', async () => {
+    const { getByText } = render(<App />)
+    const commandOne = 'PLACE 1 1 NORTH'
+    const commandInput = screen.getByTestId("commandInput");
+    const submitBtn = screen.getByTestId('run-cmd-btn');
+    // const alertMock = jest.spyOn(window, 'alert').mockImplementation();
+
+    userEvent.type(commandInput, commandOne);
+    await userEvent.click(submitBtn);
+
+    const commandTwo = 'LEFT'
+    userEvent.type(commandInput, commandTwo);
+    await userEvent.click(submitBtn);
+
+    expect(getByText("WEST")).toBeInTheDocument()
+  })
+
+  it('displays EAST on the page after PLACE 1 1 NORTH RIGHT', async () => {
+    const { getByText } = render(<App />)
+    const commandOne = 'PLACE 1 1 NORTH'
+    const commandInput = screen.getByTestId("commandInput");
+    const submitBtn = screen.getByTestId('run-cmd-btn');
+    // const alertMock = jest.spyOn(window, 'alert').mockImplementation();
+
+    userEvent.type(commandInput, commandOne);
+    await userEvent.click(submitBtn);
+
+    const commandTwo = 'RIGHT'
+    userEvent.type(commandInput, commandTwo);
+    await userEvent.click(submitBtn);
+
+    expect(getByText("EAST")).toBeInTheDocument()
+  })
 })
