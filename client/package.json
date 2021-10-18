@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "robot-game",
+  "author": "Frank Perler",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

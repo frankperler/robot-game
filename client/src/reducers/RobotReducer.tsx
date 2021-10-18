@@ -1,8 +1,7 @@
 import { RobotState } from "../types";
 import { RobotActions } from "../actions/RobotActions";
-import { ORIENTATION } from "../utils/constants";
+import { ORIENTATION, DirectionTypes } from "../utils/constants";
 import { rotate } from "../utils/functions";
-import { DirectionTypes } from "../utils/constants";
 
 export const initialRobotState: RobotState = {
   isPlaced: false,

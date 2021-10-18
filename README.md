@@ -60,7 +60,7 @@ $ git clone https://github.com/frankperler/robot-game
 #### Install npm package
 
 ```bash
-$ cd robot-game && npm install
+$ cd robot-game/client && npm install
 ```
 
 #### Start local server
