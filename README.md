@@ -10,7 +10,7 @@ The application is a simulation of a robot moving on a square tabletop, of dimen
 ## Create an application that can read in commands of the following form
 
 ```
-PLACE X,Y,F
+PLACE X Y F
 MOVE
 LEFT
 RIGHT
